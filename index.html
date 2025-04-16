@@ -3,124 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
-  <style>
-    :root {
-      --rosewater: #f5e0dc;
-      --flamingo:  #f2cdcd;
-      --mauve:     #cba6f7;
-      --pink:      #f5c2e7;
-      --maroon:    #eba0ac;
-      --red:       #f38ba8;
-      --peach:     #fab387;
-      --yellow:    #f9e2af;
-      --green:     #a6e3a1;
-      --teal:      #94e2d5;
-      --blue:      #89b4fa;
-      --sky:       #89dceb;
-      --sapphire:  #74c7ec;
-      --lavender:  #b4befe;
-      --text:      #cdd6f4;
-      --subtext:   #bac2de;
-      --overlay:   #6c7086;
-      --surface:   #313244;
-      --base:      #1e1e2e;
-      --mantle:    #181825;
-      --crust:     #11111b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--base);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--mantle);
-      color: var(--lavender);
-      padding: 30px 0;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      animation: slideDown 1s ease-out;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: var(--subtext);
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--pink);
-    }
-
-    .container {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 60px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      border-bottom: 2px solid var(--overlay);
-      padding-bottom: 5px;
-      color: var(--mauve);
-    }
-
-    .project {
-      margin-top: 15px;
-      background-color: var(--surface);
-      padding: 15px;
-      border-left: 5px solid var(--blue);
-      transition: transform 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--mantle);
-      color: var(--overlay);
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+  <title>Jack Rawlings | Portfolio</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
+    <h1>J</h1><h1>a</h1><h1>c</h1><h1>k</h1><h1>&nbsp;</h1><h1>R</h1><h1>a</h1><h1>w</h1><h1>l</h1><h1>i</h1><h1>n</h1><h1>g</h1><h1>s</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -131,26 +19,41 @@
   <div class="container">
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I'm a developer/designer/engineer passionate about building beautiful and functional web experiences. I love working with modern tech and clean aesthetics.</p>
+      <p>Hello! I'm a developer who dabbles in web design, games and the fundamentals of computers.</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
+  
       <div class="project">
-        <h3>Cool Project</h3>
-        <p>This project does something awesome using HTML, CSS, and JavaScript. Check it out on GitHub or try the live demo!</p>
+        <div class="title">ReTreat</div>
+        <div class="content">
+          <p>I created a simple, Twitter-like social media platform.<br>
+          The website is hosted on Cloudflare Pages and uses Cloudflare Workers for the backend.<br>
+          It has an intuitive authentication screen, combining a log-in and sign-up screen into one, coherent system.<br>
+          It has image support, in the form of Base-64 encoded images, and a simple, easy to use interface.<br><br>
+          The website can be found <a href="https://retreat-4vv.pages.dev">here.</a><br><br>
+          The repository can be found <a href="https://github.com/gingrspacecadet/retreat">here.</a></p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="title">Vincent Van Yogh</div>
+        <div class="content">
+          <p>A simple package installer for Arch Linux.<br>
+          The repository can be found <a href="https://github.com/gingrspacecadet/vincent-van-yogh">here.</a></p>
+        </div>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>GitHub / LinkedIn / Other: Add your links here</p>
+      <p>Email: <a href="mailto://jackrawlings2011@gmail.com">jackrawlings2011@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/gingrspacecadet">https://github.com/gingrspacecadet</a></p>
     </section>
   </div>
 
   <footer>
-    &copy; 2025 Your Name
+    &copy; 2025 Jack Rawlings
   </footer>
 
   <script>
@@ -167,5 +70,30 @@
       observer.observe(section);
     });
   </script>
+
+  <script>
+  const projectTitles = document.querySelectorAll('.project .title');
+
+  projectTitles.forEach(title => {
+    title.addEventListener('click', () => {
+      const content = title.nextElementSibling;
+      const openContent = document.querySelector('.project .content.open');
+
+      if (openContent && openContent !== content) {
+        openContent.style.maxHeight = null;
+        openContent.classList.remove('open');
+      }
+
+      if (content.classList.contains('open')) {
+        content.style.maxHeight = null;
+        content.classList.remove('open');
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add('open');
+      }
+    });
+  });
+  </script>
+
 </body>
 </html>
