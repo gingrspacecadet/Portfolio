@@ -5,33 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name | Portfolio</title>
   <style>
-    body {
+    :root {
+      --rosewater: #f5e0dc;
+      --flamingo:  #f2cdcd;
+      --mauve:     #cba6f7;
+      --pink:      #f5c2e7;
+      --maroon:    #eba0ac;
+      --red:       #f38ba8;
+      --peach:     #fab387;
+      --yellow:    #f9e2af;
+      --green:     #a6e3a1;
+      --teal:      #94e2d5;
+      --blue:      #89b4fa;
+      --sky:       #89dceb;
+      --sapphire:  #74c7ec;
+      --lavender:  #b4befe;
+      --text:      #cdd6f4;
+      --subtext:   #bac2de;
+      --overlay:   #6c7086;
+      --surface:   #313244;
+      --base:      #1e1e2e;
+      --mantle:    #181825;
+      --crust:     #11111b;
+    }
+
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--base);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     header {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
+      background-color: var(--mantle);
+      color: var(--lavender);
+      padding: 30px 0;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    nav {
-      margin-top: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      animation: slideDown 1s ease-out;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
       margin: 0 15px;
+      color: var(--subtext);
+      text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--pink);
     }
 
     .container {
@@ -41,23 +70,51 @@
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px solid var(--overlay);
       padding-bottom: 5px;
+      color: var(--mauve);
     }
 
     .project {
-      margin-top: 10px;
+      margin-top: 15px;
+      background-color: var(--surface);
+      padding: 15px;
+      border-left: 5px solid var(--blue);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #333;
-      color: white;
+      background-color: var(--mantle);
+      color: var(--overlay);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -74,27 +131,41 @@
   <div class="container">
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I'm a web developer/designer/engineer (customize this!) with a passion for creating beautiful and functional websites and applications.</p>
+      <p>Hello! I'm a developer/designer/engineer passionate about building beautiful and functional web experiences. I love working with modern tech and clean aesthetics.</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <div class="project">
-        <h3>Project Title</h3>
-        <p>Description of your project goes here. Mention tech used, purpose, and maybe a link.</p>
+        <h3>Cool Project</h3>
+        <p>This project does something awesome using HTML, CSS, and JavaScript. Check it out on GitHub or try the live demo!</p>
       </div>
-      <!-- Add more projects here -->
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: your.email@example.com</p>
-      <p>LinkedIn/GitHub/Other: links here</p>
+      <p>GitHub / LinkedIn / Other: Add your links here</p>
     </section>
   </div>
 
   <footer>
     &copy; 2025 Your Name
   </footer>
+
+  <script>
+    // Scroll reveal animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
